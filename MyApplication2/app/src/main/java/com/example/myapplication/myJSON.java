@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class myJSON {
     public static URL generateURL (String abon_id) {
         Uri _uri = Uri.parse("http://178.209.66.126/json/json.php").buildUpon()
-                .appendQueryParameter("user", "apitest")
+                .appendQueryParameter("user", "apitest2")
                 .appendQueryParameter("pass", "api")
                 .appendQueryParameter("action", "Search")
                 .appendQueryParameter("id", abon_id)

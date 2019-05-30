@@ -56,11 +56,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void ClickSearch(View v) {
-        EditText abon_id = (EditText) findViewById(R.id.abon_id);
-        //TextView text_res = (TextView)findViewById(R.id.text_result);
+        String user = ((EditText) findViewById(R.id.user_name)).getText().toString();
+        String pass = ((EditText) findViewById(R.id.user_pass)).getText().toString();
+        String abon_id = ((EditText) findViewById(R.id.abon_id)).getText().toString();
 
-        String _abon_id = abon_id.getText().toString();
-        URL get = generateURL(_abon_id);
+        URL get = generateURL(user, pass, abon_id);
         new SendRecvAsync().execute(get);
 
 

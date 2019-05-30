@@ -2,6 +2,8 @@ package com.example.myapplication;
 
 import android.net.Uri;
 
+import org.json.JSONObject;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
@@ -10,10 +12,15 @@ import java.net.URL;
 import java.util.Scanner;
 
 public class myJSON {
-    public static URL generateURL (String abon_id) {
+    public void JSON_Send_Recv (String _url) {
+        JsonObjectRequest
+        return "1";
+    }
+
+    public static URL generateURL (String _user, String _pass, String abon_id) {
         Uri _uri = Uri.parse("http://178.209.66.126/json/json.php").buildUpon()
-                .appendQueryParameter("user", "apitest2")
-                .appendQueryParameter("pass", "api")
+                .appendQueryParameter("user", _user)
+                .appendQueryParameter("pass", _pass)
                 .appendQueryParameter("action", "Search")
                 .appendQueryParameter("id", abon_id)
                 .build();
@@ -30,7 +37,7 @@ public class myJSON {
         HttpURLConnection http = (HttpURLConnection)_url.openConnection();
         InputStream http_stream = http.getInputStream();
         Scanner scanner = new Scanner(http_stream);
-        scanner.useDelimiter("\\A");
+        //scanner.useDelimiter("\\A");
         http.disconnect();
 
         boolean response = scanner.hasNext();
